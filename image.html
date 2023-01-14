@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+      }
+      .gallery {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+        animation:animate 20s linear infinite
+      }
+      @keyframes animate {
+        0%{
+            transform:perspective(1000px) rotateY(0deg);
+        }
+        100%{
+            transform:perspective(1000px) rotateY(360deg);
+        }
+      }
+      .gallery span{
+        position: absolute;
+        top: 40%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-origin: center;
+        transform-style: preserve-3d;
+        transform:rotateY(calc(var(--i) * 45deg)) translateZ(300px)
+      }
+      .gallery span img{
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gallery">
+      <span style="--i: 1">
+        <img src="./Pictures/img2.jpg" alt="" />
+      </span>
+      <span style="--i: 2">
+        <img src="./Pictures/img3.jpg" alt="" />
+      </span>
+      <span style="--i: 3">
+        <img src="./Pictures/img4.jpg" alt="" />
+      </span>
+      <span style="--i: 4">
+        <img src="./Pictures/img5.jpg" alt="" />
+      </span>
+      <span style="--i: 5">
+        <img src="./Pictures/img6.jpg" alt="" />
+      </span>
+      <span style="--i: 6">
+        <img src="./Pictures/img7.jpg" alt="" />
+      </span>
+      <span style="--i: 7">
+        <img src="./Pictures/img8.jpg" alt="" />
+      </span>
+      <span style="--i: 8">
+        <img src="./Pictures/img5.jpg" alt="" />
+      </span>
+    </div>
+  </body>
+</html>
